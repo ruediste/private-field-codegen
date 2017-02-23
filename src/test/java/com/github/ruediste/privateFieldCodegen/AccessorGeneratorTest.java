@@ -10,7 +10,7 @@ public class AccessorGeneratorTest {
     public void test() {
         Sample sample = new Sample();
         assertEquals(null, sample.getMessage());
-        new AccessorGenerator().generate().accept(sample, "Hello World");
+        AccessorGenerator.generate().setMessage(sample, "Hello World");
         assertEquals("Hello World", sample.getMessage());
     }
 }
